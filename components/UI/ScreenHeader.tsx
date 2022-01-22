@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, StyleSheet, useWindowDimensions, Platform } from 'react-native';
+import { View, StyleSheet, useWindowDimensions } from 'react-native';
 import Constants from 'expo-constants';
 import Animated, { Extrapolate, interpolate, useAnimatedStyle } from 'react-native-reanimated';
+import { isAndroid } from '../../constants/utils';
 import { Colors } from '../../constants/Colors';
 import { useScreen } from './Screen';
 import { Text } from './Text';
@@ -89,8 +90,6 @@ export const ScreenHeader = React.memo<ScreenHeaderProps>(({ title }) => {
   );
 });
 
-const isAndroid = Platform.OS === 'android';
-
 const styles = StyleSheet.create({
   headerHeight: {
     marginTop: Constants.statusBarHeight,
@@ -108,14 +107,14 @@ const styles = StyleSheet.create({
   headerTitleText: {
     fontWeight: '700',
     color: Colors.text,
-    fontSize: isAndroid ? 18 : 20,
-    lineHeight: 22,
+    fontSize: 20,
+    lineHeight: 20,
   },
   largeTitleText: {
     color: Colors.text,
-    fontSize: isAndroid ? 28 : 34,
+    fontSize: 34,
     fontWeight: '700',
     paddingHorizontal: 16,
-    lineHeight: isAndroid ? 34 : 40
+    lineHeight: isAndroid ? 38 : 40
   },
 });

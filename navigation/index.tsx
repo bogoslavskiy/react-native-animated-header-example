@@ -8,6 +8,7 @@ import{ Text } from '../components/UI';
 
 import { FlatListExampleScreen } from '../screens/FlatListExampleScreen';
 import { ScrollViewExampleScreen } from '../screens/ScrollViewExampleScreen';
+import { isAndroid } from '../constants/utils';
 
 export default function Navigation() {
   return (
@@ -65,7 +66,13 @@ function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
 }) {
-  return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
+  return (
+    <FontAwesome 
+      size={isAndroid ? 26 :  30} 
+      style={{ marginBottom: isAndroid ? 0 : -3 }} 
+      {...props} 
+    />
+  );
 }
 
 function TabBarLabel(props: {
@@ -77,7 +84,7 @@ function TabBarLabel(props: {
       style={{ 
         color: props.color,
         position: 'relative',
-        top: 4
+        top: isAndroid ? 0 : 4
       }}
     >
       {props.title}
