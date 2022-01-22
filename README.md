@@ -1,7 +1,10 @@
 # React Native Animated Header
 
 Implemented with `react-native-reanimated` <br />
-jsEngine: Hermes
+Animated header like iOS style + animated bottom divider
+
+jsEngine: `Hermes`
+
 
 ## Demo
 ![flatlist_animation_ios](https://user-images.githubusercontent.com/5034713/150640764-d782dd95-32f0-4e05-8cb8-339fee70a458.gif)
