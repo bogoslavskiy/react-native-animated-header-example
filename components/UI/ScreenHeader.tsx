@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, Text, useWindowDimensions, Platform } from 'react-native';
+import { View, StyleSheet, useWindowDimensions, Platform } from 'react-native';
 import Constants from 'expo-constants';
 import Animated, { Extrapolate, interpolate, useAnimatedStyle } from 'react-native-reanimated';
 import { Colors } from '../../constants/Colors';
 import { useScreen } from './Screen';
+import { Text } from './Text';
 
 interface ScreenHeaderProps {
   title: string;

@@ -15,7 +15,9 @@ export default function useCachedResources() {
         // Load fonts
         await Font.loadAsync({
           ...FontAwesome.font,
-          'space-mono': require('../assets/fonts/SpaceMono-Regular.ttf'),
+          'EuclidCircularA-Bold': require('../assets/fonts/EuclidCircularA-Bold.ttf'),
+          'EuclidCircularA-Regular': require('../assets/fonts/EuclidCircularA-Regular.ttf'),
+          'EuclidCircularA-Medium': require('../assets/fonts/EuclidCircularA-Medium.ttf'),
         });
       } catch (e) {
         // We might want to provide this error information to an error reporting service

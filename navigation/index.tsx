@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Colors, NavigatorTheme } from '../constants/Colors';
+import{ Text } from '../components/UI';
 
 import { FlatListExampleScreen } from '../screens/FlatListExampleScreen';
 import { ScrollViewExampleScreen } from '../screens/ScrollViewExampleScreen';
@@ -42,8 +43,9 @@ function BottomTabNavigator() {
       <BottomTab.Screen
         name="FlatList"
         component={FlatListExampleScreen}
+        
         options={() => ({
-          title: 'FlatList',
+          tabBarLabel: ({ color }) => <TabBarLabel title="FlatList" color={color} />,
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         })}
       />
@@ -51,7 +53,7 @@ function BottomTabNavigator() {
         name="ScrollView"
         component={ScrollViewExampleScreen}
         options={{
-          title: 'ScrollView',
+          tabBarLabel: ({ color }) => <TabBarLabel title="ScrollView" color={color} />,
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
@@ -64,4 +66,21 @@ function TabBarIcon(props: {
   color: string;
 }) {
   return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
+}
+
+function TabBarLabel(props: {
+  color: string;
+  title: string
+}) {
+  return (
+    <Text 
+      style={{ 
+        color: props.color,
+        position: 'relative',
+        top: 4
+      }}
+    >
+      {props.title}
+    </Text>
+  );
 }

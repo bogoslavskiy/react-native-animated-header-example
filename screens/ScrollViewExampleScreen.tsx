@@ -34,6 +34,6 @@ const styles = StyleSheet.create({
   },
   itemText: {
     color: Colors.text,
-    fontSize: 16
+    fontSize: 17
   }
 });
